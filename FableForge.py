@@ -50,7 +50,7 @@ def generate_and_confirm(prompt, generator):
 
 print("Let's create your podcast script!")
 
-subject = get_input("What's the subject of your podcast?", "e.g., technology trends")
+subject = get_input("What's the subject of your podcast?", "e.g., the speakeasies of prohibtion era Chicago")
 style = get_input("What style should the podcast be?", "e.g., formal, conversational, humorous")
 tone = get_input("What tone do you prefer?", "e.g., serious, light-hearted, sarcastic")
 
