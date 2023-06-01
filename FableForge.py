@@ -1,5 +1,6 @@
 import os
 import re
+import time
 import openai
 
 openai.api_key = os.environ.get('OPENAI_API_KEY')
@@ -9,14 +10,19 @@ def ask_question(question):
     return response
 
 def generate_text_with_gpt3(prompt):
-    response = openai.ChatCompletion.create(
-      model="gpt-3.5-turbo",
-      messages=[
-          {"role": "system", "content": "You are a helpful assistant."},
-          {"role": "user", "content": prompt}
-      ]
-    )
-    return response['choices'][0]['message']['content']
+    while True:
+        try:
+            response = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "system", "content": "You are a helpful assistant."},
+                    {"role": "user", "content": prompt}
+                ]
+            )
+            return response['choices'][0]['message']['content']
+        except openai.error.RateLimitError:
+            print("Rate limit exceeded, waiting for 60 seconds before retrying.")
+            time.sleep(60)
 
 def generate_outline(prompt):
     return generate_text_with_gpt3(prompt)
