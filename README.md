@@ -13,7 +13,7 @@ Whether you're a seasoned podcaster or just starting out, FableForge simplifies 
 * Final scripts are written to a file which can be referenced later.
 
 ## Installation
-1. Clone this repository: `git clone https://github.com/username/FableForge.git`
+1. Clone this repository: `git clone https://github.com/DrBoyle/FableForge.git`
 2. Navigate to the FableForge directory: `cd FableForge`
 3. Install the required Python packages: `pip install -r requirements.txt` (You may have to use `pip3` if Python 2 is also installed.)
 4. Add your OpenAI API key to the environment variables: `export OPENAI_API_KEY='your-api-key'`
