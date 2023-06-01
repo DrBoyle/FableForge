@@ -1,7 +1,8 @@
+import os
 import re
 import openai
 
-openai.api_key = 'your-api-key'
+openai.api_key = os.environ.get('OPENAI_API_KEY')
 
 def ask_question(question):
     response = input(question + " ")
