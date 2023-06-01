@@ -33,8 +33,11 @@ def get_input(question, example):
             return response
 
 def is_roman_numeral(s):
+    s_split = s.split()
+    if not s_split:
+        return False
     pattern = r'^[IVX]+'
-    match = re.match(pattern, s.split()[0])
+    match = re.match(pattern, s_split[0])
     return match is not None
 
 def generate_and_confirm(prompt, generator):
